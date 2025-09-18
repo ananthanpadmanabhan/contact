@@ -6,76 +6,268 @@
   <title>Anantha — TERP | Contact</title>
   <meta name="description" content="Anantha Padmanabhan P S — Founder & CEO, The Earth Reimagined Project (TERP). Quick contact & social links." />
   <meta name="theme-color" content="#0b0f14" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#0f141a;
-      --text:#f1f5f9;
-      --muted:#b8c1cc;
-      --brand:#a45322;     
-      --brand-2:#c7662a;   
-      --outline:#1e2a35;
-      --focus:#ffd7b5;     
+    :root {
+      --bg: #0b0f14;
+      --card: #0f141a;
+      --text: #f1f5f9;
+      --muted: #b8c1cc;
+      --brand: #a45322;
+      --brand-2: #c7662a;
+      --outline: #1e2a35;
+      --focus: #ffd7b5;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      background:
-        radial-gradient(80vmax 80vmax at 120% -10%, #a453220f, transparent 60%),
-        radial-gradient(70vmax 70vmax at -20% 120%, #a453220a, transparent 60%),
-        var(--bg);
-      color:var(--text);
-      display:grid;
-      place-items:center;
-      padding:24px;
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
-    .card{
-      width:min(720px,100%);
-      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border:1px solid var(--outline);
-      border-radius:20px;
-      padding:28px 22px;
-      box-shadow: 0 18px 40px rgba(0,0,0,.35);
-      backdrop-filter: blur(6px);
-      animation: pop .28s ease-out both;
+
+    html, body {
+      height: 100%;
+      overscroll-behavior-y: contain;
     }
-    @keyframes pop{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
-    .header{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-    .logo{
-      width:90px;height:90px;border-radius:16px;
-      background:#0c0f13;border:1px solid var(--outline);
-      display:grid;place-items:center;overflow:hidden;
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
     }
-    .logo img{width:100%;height:100%;object-fit:cover}
-    h1{margin:0;font-size:1.38rem;line-height:1.25}
-    .role{color:var(--muted);margin-top:4px}
-    .badges{margin-top:8px; display:flex; gap:8px; flex-wrap:wrap}
-    .pill{
-      padding:6px 10px; border-radius:999px; font-size:.82rem; color:#ffe9db;
+
+    /* Animated background */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150vmax;
+      height: 150vmax;
+      background: radial-gradient(circle, #a4532250, transparent 70%);
+      transform: translate(-50%, -50%) rotate(0deg);
+      animation: backgroundPulse 40s linear infinite;
+    }
+
+    @keyframes backgroundPulse {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 0.1;
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        opacity: 0.1;
+      }
+    }
+
+    .card {
+      position: relative;
+      z-index: 10;
+      width: min(720px, 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--outline);
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+      backdrop-filter: blur(8px);
+      animation: pop .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 16px;
+      background: #0c0f13;
+      border: 1px solid var(--outline);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .role {
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .badges {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .78rem;
+      color: #ffe9db;
       background: linear-gradient(180deg, var(--brand), var(--brand-2));
-      border:1px solid #8c411c;
+      border: 1px solid #8c411c;
+      font-weight: 500;
     }
-    .divider{height:1px; background:linear-gradient(90deg,transparent,#1b2630,transparent); margin:16px 0}
-    .grid{display:grid; gap:12px; grid-template-columns:1fr}
-    @media(min-width:560px){ .grid{grid-template-columns:repeat(3,1fr)} }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px; border-radius:12px; text-decoration:none;
-      border:1px solid var(--outline); background:#0f151b; color:var(--text);
-      transition: transform .08s ease, border-color .2s ease, background .2s ease;
-      white-space:nowrap;
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #1b2630, transparent);
+      margin: 20px 0;
     }
-    .btn:hover{border-color:#2a3947; transform:translateY(-1px)}
-    .btn:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
-    .btn.primary{
-      background: linear-gradient(180deg, #1a110c, #120b07);
-      border-color:#2a1a12;
-      box-shadow: inset 0 0 0 1px #2b180c, 0 0 0 1px rgba(164,83,34,.35);
+
+    .grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
     }
-    .note{margin-top:14px; color:var(--muted); font-size:.9rem}
-    footer{margin-top:14px; color:#d6b49f; font-size:.86rem}
+
+    @media(min-width: 560px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .btn {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid var(--outline);
+      background: #0f151b;
+      color: var(--text);
+      font-weight: 500;
+      transition: transform .15s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: #2a3947;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(164, 83, 34, 0.5), transparent 70%);
+      transform: rotate(0deg);
+      transition: opacity .3s ease, transform .3s ease;
+      opacity: 0;
+    }
+    
+    .btn:hover::before {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(180deg, #2b180c, #1a0f08);
+      border-color: #2a1a12;
+      box-shadow: inset 0 0 0 1px #2b180c, 0 0 0 1px rgba(164, 83, 34, .35);
+    }
+    
+    .btn.primary:hover {
+      box-shadow: inset 0 0 0 1px #2b180c, 0 4px 12px rgba(164, 83, 34, .45);
+    }
+
+    .note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 14px;
+      color: #d6b49f;
+      font-size: .86rem;
+      text-align: center;
+    }
+
+    /* Copy notification */
+    .copy-notification {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2a3947;
+      color: var(--text);
+      padding: 12px 24px;
+      border-radius: 999px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 100;
+    }
+    
+    .copy-notification.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
   </style>
 </head>
 <body>
@@ -83,7 +275,7 @@
     <!-- Header -->
     <div class="header">
       <div class="logo" aria-hidden="true">
-        <img src="terp-logo.jpg" alt="TERP logo">
+        <img src="https://placehold.co/90x90/a45322/ffe9db?text=TERP" alt="TERP logo placeholder">
       </div>
       <div>
         <h1 id="title">Anantha Padmanabhan P S</h1>
@@ -102,26 +294,27 @@
     <section class="grid" aria-label="Contact and social links">
       <!-- WhatsApp chat -->
       <a class="btn primary" href="https://wa.me/919497269245" target="_blank" rel="noopener">
-        WhatsApp: +91&nbsp;9497269245
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>+91 9497269245</span>
       </a>
 
       <!-- Email -->
-      <a class="btn" href="mailto:anantha.ps@theterp.in">Email: anantha.ps@theterp.in</a>
+      <a class="btn" href="mailto:anantha.ps@theterp.in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 7-10-7"/></svg>
+        <span>anantha.ps@theterp.in</span>
+      </a>
 
       <!-- LinkedIn -->
       <a class="btn" href="https://www.linkedin.com/in/anantha1995/" target="_blank" rel="noopener">LinkedIn</a>
 
       <!-- Instagram -->
-      <a class="btn" href="https://instagram.com/ananthan_padmanabhan" target="_blank" rel="noopener">@ananthan_padmanabhan</a>
+      <a class="btn" href="https://instagram.com/ananthan_padmanabhan" target="_blank" rel="noopener">Instagram</a>
 
       <!-- Visit Website -->
-      <a class="btn" href="https://ananthanpadmanabhan.github.io/TERP/" target="_blank" rel="noopener">Visit Website</a>
-
-      <!-- Organisation Contacts -->
-      <a class="btn" href="contactus.html">Organisation Contacts</a>
+      <a class="btn" href="https://ananthanpadmanabhan.github.io/TERP/" target="_blank" rel="noopener">Website</a>
 
       <!-- Share link -->
-      <a class="btn" id="shareBtn">Share</a>
+      <button class="btn" id="shareBtn" aria-label="Share this page">Share</button>
     </section>
 
     <!-- Professional note line -->
@@ -130,6 +323,8 @@
     <!-- Footer -->
     <footer>© TERP — The Earth Reimagined Project</footer>
   </main>
+  
+  <div id="copy-notification" class="copy-notification">Link copied!</div>
 
   <!-- SEO structured data -->
   <script type="application/ld+json">
@@ -152,6 +347,15 @@
   <!-- Share button -->
   <script>
     const shareBtn = document.getElementById("shareBtn");
+    const notification = document.getElementById("copy-notification");
+
+    const showNotification = () => {
+      notification.classList.add("show");
+      setTimeout(() => {
+        notification.classList.remove("show");
+      }, 2000);
+    };
+
     if (navigator.share) {
       shareBtn.addEventListener("click", async () => {
         try {
@@ -160,10 +364,21 @@
             text: "Quick contact details for Anantha (TERP).",
             url: location.href
           });
-        } catch(e){}
+        } catch(e) {
+          console.error("Web Share API failed:", e);
+        }
       });
     } else {
-      shareBtn.setAttribute("href", location.href);
+      shareBtn.addEventListener("click", () => {
+        const url = location.href;
+        const tempInput = document.createElement("textarea");
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        showNotification();
+      });
     }
   </script>
 </body>
