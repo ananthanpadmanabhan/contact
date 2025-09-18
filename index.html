@@ -8,14 +8,14 @@
   <meta name="theme-color" content="#0b0f14" />
   <style>
     :root{
-      --bg:#0b0f14;        /* dark */
-      --card:#0f141a;      /* surface */
-      --text:#f1f5f9;      /* high contrast */
-      --muted:#b8c1cc;     /* secondary */
-      --brand:#a45322;     /* TERP burnt orange */
-      --brand-2:#c7662a;   /* lighter orange */
-      --outline:#1e2a35;   /* borders */
-      --focus:#ffd7b5;     /* warm focus ring */
+      --bg:#0b0f14;
+      --card:#0f141a;
+      --text:#f1f5f9;
+      --muted:#b8c1cc;
+      --brand:#a45322;     
+      --brand-2:#c7662a;   
+      --outline:#1e2a35;
+      --focus:#ffd7b5;     
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -58,30 +58,24 @@
       border:1px solid #8c411c;
     }
     .divider{height:1px; background:linear-gradient(90deg,transparent,#1b2630,transparent); margin:16px 0}
-    .grid{display:grid; gap:12px; grid-template-columns:repeat(3,1fr)}
-    @media(max-width:559px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    .grid{display:grid; gap:12px; grid-template-columns:1fr}
+    @media(min-width:560px){ .grid{grid-template-columns:repeat(3,1fr)} }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px; border-radius:12px; text-decoration:none;
+      padding:12px 14px; border-radius:12px; text-decoration:none;
       border:1px solid var(--outline); background:#0f151b; color:var(--text);
       transition: transform .08s ease, border-color .2s ease, background .2s ease;
-      min-height:44px;
+      white-space:nowrap;
     }
     .btn:hover{border-color:#2a3947; transform:translateY(-1px)}
     .btn:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
     .btn.primary{
-      grid-column: span 2; /* make WhatsApp wider */
       background: linear-gradient(180deg, #1a110c, #120b07);
       border-color:#2a1a12;
       box-shadow: inset 0 0 0 1px #2b180c, 0 0 0 1px rgba(164,83,34,.35);
     }
-    .btn.text{
-      grid-column: span 2; /* make Email wider */
-    }
-    .icon-only{padding:12px}
-    .note{margin-top:14px; color:var(--muted); font-size:.9rem; text-align:center}
-    footer{margin-top:14px; color:#d6b49f; font-size:.86rem; text-align:center}
-    .sr-only{position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+    .note{margin-top:14px; color:var(--muted); font-size:.9rem}
+    footer{margin-top:14px; color:#d6b49f; font-size:.86rem}
   </style>
 </head>
 <body>
@@ -106,62 +100,28 @@
 
     <!-- Contact & Social Buttons -->
     <section class="grid" aria-label="Contact and social links">
-      <!-- WhatsApp (labelled) -->
-      <a class="btn primary" href="https://wa.me/919497269245" target="_blank" rel="noopener" title="Chat on WhatsApp">
-        <!-- phone/chat icon -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20 11.5A8.5 8.5 0 1 1 11.5 3 8.5 8.5 0 0 1 20 11.5Z" stroke="#c7662a" stroke-width="1.5"/>
-          <path d="M9 8c0 3.3 2.7 6 6 6" stroke="#c7662a" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        WhatsApp
+      <!-- WhatsApp chat -->
+      <a class="btn primary" href="https://wa.me/919497269245" target="_blank" rel="noopener">
+        WhatsApp: +91&nbsp;9497269245
       </a>
 
-      <!-- Email (labelled) -->
-      <a class="btn text" href="mailto:anantha.ps@theterp.in" title="Send email">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M4 6h16v12H4z" stroke="#c7662a" stroke-width="1.5"/>
-          <path d="M4 7l8 6 8-6" stroke="#c7662a" stroke-width="1.5" fill="none"/>
-        </svg>
-        Email
-      </a>
+      <!-- Email -->
+      <a class="btn" href="mailto:anantha.ps@theterp.in">Email: anantha.ps@theterp.in</a>
 
-      <!-- LinkedIn (icon only) -->
-      <a class="btn icon-only" href="https://www.linkedin.com/in/anantha1995/" target="_blank" rel="noopener" title="LinkedIn" aria-label="Open LinkedIn profile">
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3.5 9h3v12h-3V9Zm6 0h2.9v1.6h.04C12.84 9.8 13.9 9 15.5 9 18.9 9 20 10.6 20 13.2V21h-3v-6.7c0-1.6-.6-2.6-2-2.6-1.1 0-1.7.8-2 1.6-.1.2-.1.6-.1.9V21h-3V9Z" fill="#d8ab8b"/>
-        </svg>
-        <span class="sr-only">LinkedIn</span>
-      </a>
+      <!-- LinkedIn -->
+      <a class="btn" href="https://www.linkedin.com/in/anantha1995/" target="_blank" rel="noopener">LinkedIn</a>
 
-      <!-- Instagram (icon only) -->
-      <a class="btn icon-only" href="https://instagram.com/ananthan_padmanabhan" target="_blank" rel="noopener" title="Instagram" aria-label="Open Instagram profile">
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="5" stroke="#c7662a" stroke-width="1.5" fill="none"/>
-          <circle cx="12" cy="12" r="4.2" stroke="#c7662a" stroke-width="1.5" fill="none"/>
-          <circle cx="17.3" cy="6.7" r="1.2" fill="#c7662a"/>
-        </svg>
-        <span class="sr-only">Instagram</span>
-      </a>
+      <!-- Instagram -->
+      <a class="btn" href="https://instagram.com/ananthan_padmanabhan" target="_blank" rel="noopener">@ananthan_padmanabhan</a>
 
-      <!-- Website (icon only) -->
-      <a class="btn icon-only" href="https://ananthanpadmanabhan.github.io/TERP/" target="_blank" rel="noopener" title="Website" aria-label="Open TERP website">
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" stroke="#c7662a" stroke-width="1.5" fill="none"/>
-          <path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18" stroke="#c7662a" stroke-width="1.5" fill="none"/>
-        </svg>
-        <span class="sr-only">Website</span>
-      </a>
+      <!-- Visit Website -->
+      <a class="btn" href="https://ananthanpadmanabhan.github.io/TERP/" target="_blank" rel="noopener">Visit Website</a>
 
-      <!-- Organisation Contacts (text) -->
-      <a class="btn text" href="contactus.html" title="Organisation contact details">Contacts</a>
+      <!-- Organisation Contacts -->
+      <a class="btn" href="contactus.html">Organisation Contacts</a>
 
-      <!-- Share (icon only) -->
-      <a class="btn icon-only" id="shareBtn" title="Share this page" aria-label="Share this page">
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 12v7h16v-7M12 16V4m0 0l-4 4m4-4l4 4" stroke="#c7662a" stroke-width="1.5" fill="none"/>
-        </svg>
-        <span class="sr-only">Share</span>
-      </a>
+      <!-- Share link -->
+      <a class="btn" id="shareBtn">Share</a>
     </section>
 
     <!-- Professional note line -->
@@ -185,8 +145,7 @@
       "https://www.linkedin.com/in/anantha1995/",
       "https://instagram.com/ananthan_padmanabhan"
     ],
-    "url": "https://ananthanpadmanabhan.github.io/TERP/",
-    "address": {"@type": "PostalAddress","addressRegion": "Kerala","addressCountry": "IN"}
+    "url": "https://ananthanpadmanabhan.github.io/TERP/"
   }
   </script>
 
